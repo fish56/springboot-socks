@@ -1,9 +1,6 @@
 package com.hehe.integration.user;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "T_USER")
@@ -11,17 +8,18 @@ public class User {
 
     @Id
     @Column(name = "USERID")
-    private String userId;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer userId;
     @Column(name = "USERNAME")
     private String username;
     @Column(name = "PASSWORD")
     private String password;
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

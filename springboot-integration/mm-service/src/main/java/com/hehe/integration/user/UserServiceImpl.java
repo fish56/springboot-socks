@@ -15,4 +15,12 @@ public class UserServiceImpl  implements UserService {
     public List<User> list() {
         return userRepository.findAll();
     }
+
+    @Override
+    public User insertUserByName(String name) {
+        User user = new User();
+        user.setUsername(name);
+        user.setPassword("123456");
+        return userRepository.save(user);
+    }
 }
