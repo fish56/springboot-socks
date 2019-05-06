@@ -12,20 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class MybatisApplicationTest {
 
-	@SuppressWarnings("all")
-	@Autowired
-	UserMapper userMapper;
-
 	@Test
-	public void test_db() {
-
-		//开始进行测试
-		assertThat(userMapper.list().size()).isGreaterThan(1);
-		assertThat(userMapper.getOne("1")).isNotEqualTo(null);
-		assertThat(userMapper.getOne("xxx")).isEqualTo(null);
-
-
-
+	public void isEnvOk() {
 	}
 
 }

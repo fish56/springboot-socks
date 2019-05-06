@@ -9,15 +9,15 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("select * from t_user where 1=1")
-    List<User> list();
+    List<User> selectAll();
 
     @Select("select * from t_user where username like #{username}")
-    List<User> findByUsername(String username);
+    List<User> selectByUsername(String username);
 
     @Select("select * from t_user where user_id like #{userId}")
-    User getOne(String userId);
+    User selectById(Integer userId);
 
     @Delete("delete from t_user where user_id like #{userId}")
-    int delete(String userId);
+    int deleteById(Integer userId);
 
 }
